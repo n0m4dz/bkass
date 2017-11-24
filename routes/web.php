@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomeController@home')
+    ->middleware(['ipblock'])
+    ->name('Home');
+
+Route::get('fail', function () {
+    return 'You are blocked';
 });
+
+Route::resource('post', 'PostController');
