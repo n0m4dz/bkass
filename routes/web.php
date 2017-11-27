@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', 'HomeController@home')
-    ->middleware(['ipblock'])
-    ->name('Home');
+Route::get('/{id}', 'HomeController@home')
+    ->name('Home')
+    ->where('id', '[0-9]+');
 
 Route::get('fail', function () {
     return 'You are blocked';

@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use View;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +13,26 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        
+        $menus = [
+            [
+                'label' => 'Home',
+                'link'  => '/'
+            ],
+            [
+                'label' => 'About',
+                'link'  => '/'
+            ], [
+                'label' => 'Service',
+                'link'  => '/'
+            ], [
+                'label' => 'Contact',
+                'link'  => '/'
+            ],
+        ];
+        $person = "Ben";
+
+        View::share('menus', $menus);
+        View::share('person', $person);
     }
 
     /**
