@@ -18,3 +18,4 @@ mix
 
     //Scripts
     .js('resources/assets/js/app.js', 'public/js')
+    .js('resources/assets/js/spa.js', 'public/js')

@@ -11,6 +11,8 @@
 |
 */
 
+Route::view('/', 'index');
+
 Route::get('/{id}', 'HomeController@home')
     ->name('Home')
     ->where('id', '[0-9]+');

@@ -1,1 +1,8 @@
-.home-page h1{color:#00ffd7}.home-page>div{border:1px solid #00b300}
+.home-page h1 {
+  color: #00ffd7;
+}
+
+.home-page > div {
+  border: solid 1px #00b300;
+}
+
