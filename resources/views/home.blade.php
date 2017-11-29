@@ -2,22 +2,39 @@
 
 @extends('layouts.master')
 
+@section('style')
+    <link rel="stylesheet" href="/css/home.css">
+@endsection
+
 @section('page')
-    <h1>I am blade home</h1>
-    {{ $social->getUser() }}
-    <hr>
+    <section class="home-page">
+        <h1>I am blade home</h1>
+        {{ $social->getUser() }}
+        <hr>
+        <b class="s66">Testing mixin</b>
 
-    <div>
-        {{ dump($menus) }}
-        {{ dump($person) }}
-    </div>
+        <p class="p1">
+            I am P1
+        </p>
 
-    <hr>
+        <p class="p2">
+            I am P2
+            <span>
+                <a href="#">Click me</a>
+            </span>
+        </p>
 
+        <hr>
+        <div>
+            {{ dump($menus) }}
+            {{ dump($person) }}
+        </div>
 
-    @foreach($data as $d)
-        {{ dump($d) }}
-    @endforeach
+        <hr>
+        @foreach($data as $d)
+            {{ dump($d) }}
+        @endforeach
+    </section>
 @endsection
 
 @section('script')

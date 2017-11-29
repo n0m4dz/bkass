@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ $title or 'Laravel' }}</title>
+    <link rel="stylesheet" href="/css/app.css">
     @yield('style')
 </head>
 <body>
+
 <h1>Master is here</h1>
 @yield('page')
+
+<script src="/js/app.js"></script>
 @yield('script')
 </body>
 </html>

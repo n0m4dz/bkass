@@ -1,0 +1,11 @@
+@import "../base/variables";
+
+.home-page {
+  h1 {
+    color: $primary;
+  }
+
+  & > div {
+    border: solid 1px $success;
+  }
+}

@@ -1,9 +1,13 @@
+@import "base/variables";
+@import "base/utils";
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+//Components
+@import "components/p";
 
-// Variables
-@import "variables";
+@include fontsize(12);
 
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+body {
+  background: $bg;
+  font-size: 14px;
+  color: #444444;
+}
