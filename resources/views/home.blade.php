@@ -7,6 +7,18 @@
 @endsection
 
 @section('page')
+    <h1>Sessions</h1>
+    @if(session()->has('age'))
+        <h1>{{ session('age') }}</h1>
+    @endif
+
+    @if(session()->has('w'))
+        <h1>{{ session('w') }}</h1>
+    @endif
+
+    <hr>
+
+
     <section class="home-page">
         <h1>I am blade home</h1>
         {{ $social->getUser() }}

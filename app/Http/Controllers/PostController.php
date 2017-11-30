@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
+use Illuminate\Auth;
 
 class PostController extends Controller
 {
@@ -21,9 +23,12 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $request->session()->put('name', 'ben');
+        session(['age' => 16]);
+        session()->flash('w', 120);
+        return view('create-post');
     }
 
     /**
@@ -32,9 +37,22 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        //
+        dump($request->except('_token'));
+
+//        $validatedData = $request->validate([
+//            'title'   => 'required|min:5',
+//            'content' => 'required'
+//        ]);
+        session()->flash('alert', 'success');
+        session()->flash('msg', 'successfully created post');
+        Auth::user();
+
+        return redirect('post/create');
+
+//        dump($validatedData);
+//        Post::create($validatedData);
     }
 
     /**

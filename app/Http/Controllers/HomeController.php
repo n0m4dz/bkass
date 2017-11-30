@@ -3,24 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Helper\SocialHelper;
 
 class HomeController extends Controller
 {
-    function home(Request $request, $id = false)
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
+        $this->middleware('auth');
+    }
 
-        $data = [[
-            'name' => 'demo',
-            'age'  => 13
-        ],
-            [
-                'name' => 'demo',
-                'age'  => 13
-            ]
-        ];
-
-        return view('home', compact('data'))
-            ->withTitle('Home page');
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('home');
     }
 }
