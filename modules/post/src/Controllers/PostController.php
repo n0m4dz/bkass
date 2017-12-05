@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Railway\Post\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use Illuminate\Auth;
+use App\Post;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -15,7 +18,12 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('post');
+        return view('post::index');
+    }
+
+    function getPosts()
+    {
+        return Post::orderBy('id', 'desc')->take(20)->get();
     }
 
     /**
@@ -39,20 +47,25 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-        dump($request->except('_token'));
 
 //        $validatedData = $request->validate([
 //            'title'   => 'required|min:5',
 //            'content' => 'required'
 //        ]);
-        session()->flash('alert', 'success');
-        session()->flash('msg', 'successfully created post');
-        Auth::user();
+//        session()->flash('alert', 'success');
+//        session()->flash('msg', 'successfully created post');
+//        Auth::user();
 
-        return redirect('post/create');
+//        return redirect('post/create');
 
 //        dump($validatedData);
-//        Post::create($validatedData);
+
+        $r = Post::create($request->all());
+//        $r = DB::table('post')->insert($request->all());
+        if ($r) {
+            return response()->json(['status' => true]);
+        }
+        return response()->json(['status' => false]);
     }
 
     /**

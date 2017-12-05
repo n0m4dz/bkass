@@ -12,7 +12,11 @@ let mix = require('laravel-mix');
  */
 
 mix
-//SASS
+//POST module
+    .sass('modules/post/assets/scss/app.scss', 'public/css/post.css')
+    .js('modules/post/assets/js/app.js', 'public/js/post.js')
+
+    //Application
     .sass('resources/assets/sass/app.scss', 'public/css')
     .sass('resources/assets/sass/pages/home.scss', 'public/css/home.css')
 

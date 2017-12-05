@@ -1,0 +1,13 @@
+{
+  "name": "railway/post",
+  "description": "Post package",
+  "keywords": [
+    "framework",
+    "laravel",
+    "post module"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "require": {}
+}

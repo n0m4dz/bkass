@@ -7,6 +7,23 @@
 @endsection
 
 @section('page')
+    <h1>Users posts</h1>
+    <form id="logoutFrm" action="/logout" method="post" style="display: none">
+        {{ csrf_field() }}
+    </form>
+    <a href="javascript:void(0)" onclick="logout()">logout</a>
+    @if($posts)
+        @foreach($posts as $p)
+            <li>
+                <h4>{{ $p->title }} /</h4>
+                <p>
+                    {!! $p->content !!}
+                </p>
+            </li>
+        @endforeach
+    @endif
+
+
     <h1>Sessions</h1>
     @if(session()->has('age'))
         <h1>{{ session('age') }}</h1>
@@ -43,12 +60,19 @@
         </div>
 
         <hr>
-        @foreach($data as $d)
-            {{ dump($d) }}
-        @endforeach
+        {{--@foreach($data as $d)--}}
+        {{--{{ dump($d) }}--}}
+        {{--@endforeach--}}
     </section>
 @endsection
 
 @section('script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script>
+        $(function () {
+            window.logout = function () {
+                $('#logoutFrm').submit()
+            }
+        })
+    </script>
 @endsection

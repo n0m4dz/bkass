@@ -13,6 +13,7 @@
 
 Route::view('/', 'index');
 
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/{id}', 'HomeController@home')
     ->name('Home')
     ->where('id', '[0-9]+');
@@ -21,7 +22,5 @@ Route::get('fail', function () {
     return 'You are blocked';
 });
 
-Route::resource('post', 'PostController');
+Route::get('users', 'UsersController@index');
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

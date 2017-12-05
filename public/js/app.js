@@ -60,27 +60,25 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 28);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */,
-/* 1 */,
-/* 2 */
+/******/ ({
+
+/***/ 28:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(3);
-__webpack_require__(5);
-module.exports = __webpack_require__(7);
+module.exports = __webpack_require__(29);
 
 
 /***/ }),
-/* 3 */
+
+/***/ 29:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Person__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Person__ = __webpack_require__(30);
 //Class
 
 
@@ -138,7 +136,8 @@ setTimeout(function () {
 console.log(asVar);
 
 /***/ }),
-/* 4 */
+
+/***/ 30:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -187,18 +186,6 @@ var Programmer = function (_Person) {
 
 /* harmony default export */ __webpack_exports__["b"] = (Person);
 
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 6 */,
-/* 7 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
 /***/ })
-/******/ ]);
+
+/******/ });
