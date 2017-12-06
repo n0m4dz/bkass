@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Hello Socket</h1>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+<script>
+    var socket = io('http://127.0.0.1:3000');
+    socket.emit('bid', 'bidding 12313');
+    socket.on('new bid', function (bid) {
+        console.log(bid)
+    })
+</script>
+</body>
+</html>

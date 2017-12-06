@@ -63,7 +63,7 @@ class PostController extends Controller
         $r = Post::create($request->all());
 //        $r = DB::table('post')->insert($request->all());
         if ($r) {
-            return response()->json(['status' => true]);
+            return response()->json(['status' => true, 'post' => $r]);
         }
         return response()->json(['status' => false]);
     }
